@@ -5,7 +5,6 @@ import {
 } from "@/lib/contentful/hero-section-api";
 import { notFound } from "next/navigation";
 import PreviewWrapper from "@/app/preview/_components/preview-wrapper";
-import HeroSection from "@/app/_components/hero-section";
 
 export async function generateStaticParams() {
   const allPreviews = await getAllHomeHeroSections();
