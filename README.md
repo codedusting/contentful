@@ -45,14 +45,15 @@ in the FE.
 
 - Create an account on [contentful](https://contentful.com) and simply follow usual instructions till the below screen
   is reached:
-  
-  ![img.png](readme/start.png)
-  
+
+  ![image](https://github.com/user-attachments/assets/b771cccc-11bf-4818-8122-fe215da84ea8)
+
 - Here, choose start from scratch and follow the steps shown.
 - You can create a dummy content model named "Homepage" and fill it with following types as shown in the image below (
   note: also add a new "Preview Slug" field with Slug type linked to Internal Title):
   
-  ![img.png](readme/content-model.png)
+  ![image](https://github.com/user-attachments/assets/a2697c06-abff-4297-a262-a13c2434ce42)
+
   
 - Now go to "content" tab and click on "Add Entry" and simply fill the details as required. You can fill any data.
 - At this point, we are ready to consume this data in our codebase and also setup "Live Preview" if we want to.
@@ -68,11 +69,11 @@ in the FE.
   ```
 - In your contentful dashboard, under the spaces, you'll find "Settings" dropdown. Click on it:
   
-  ![img.png](readme/settings.png)
-  
+  ![image](https://github.com/user-attachments/assets/aea52f8b-a2a7-4956-85f3-d369bc0483be)
+
 - Here, you'll find two settings: API Keys and CMA Tokens:
   
-  ![img.png](readme/tokens.png)
+  ![image](https://github.com/user-attachments/assets/1f582718-570d-469d-b44a-b3dee3c9fa0b)
   
 - Just click on both one by one, and create the API keys and tokens and retrieve the values for the `.env` file
   variables and paste them in the `.env` file.
@@ -80,8 +81,8 @@ in the FE.
   Content preview" from the dropdown.
 - Start setup process and configure it like this for the localhost (note: change preview url
   to http://localhost:3000/api/preview/enable-draft?secret=preview&slug={entry.fields.previewSlug}):
-  
-  ![img.png](readme/preview.png)
+
+  ![image](https://github.com/user-attachments/assets/7bb14bb2-b786-4a3b-9c89-54d8dbf30cee)
   
 - Focus on the preview url that is supplied as we will use the `secret` and `slug` in our codebase api route.
 - Now come back to code terminal and run `bun add @contentful/live-preview or npm install @contentful/live-preview`
