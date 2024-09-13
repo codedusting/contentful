@@ -45,11 +45,15 @@ in the FE.
 
 - Create an account on [contentful](https://contentful.com) and simply follow usual instructions till the below screen
   is reached:
+  
   ![img.png](readme/start.png)
+  
 - Here, choose start from scratch and follow the steps shown.
 - You can create a dummy content model named "Homepage" and fill it with following types as shown in the image below (
   note: also add a new "Preview Slug" field with Slug type linked to Internal Title):
+  
   ![img.png](readme/content-model.png)
+  
 - Now go to "content" tab and click on "Add Entry" and simply fill the details as required. You can fill any data.
 - At this point, we are ready to consume this data in our codebase and also setup "Live Preview" if we want to.
 - Open you next.js app and run `bun add contentful` or `npm install contentful` to install the `contentful` package.
@@ -63,16 +67,22 @@ in the FE.
   CONTENTFUL_MANAGEMENT_TOKEN=<your_cma_token>
   ```
 - In your contentful dashboard, under the spaces, you'll find "Settings" dropdown. Click on it:
+  
   ![img.png](readme/settings.png)
+  
 - Here, you'll find two settings: API Keys and CMA Tokens:
+  
   ![img.png](readme/tokens.png)
+  
 - Just click on both one by one, and create the API keys and tokens and retrieve the values for the `.env` file
   variables and paste them in the `.env` file.
 - Now create a new folder `preview/page.tsx` inside `app` and go back to contentful dashboard, "Settings" and select "
   Content preview" from the dropdown.
 - Start setup process and configure it like this for the localhost (note: change preview url
   to http://localhost:3000/api/preview/enable-draft?secret=preview&slug={entry.fields.previewSlug}):
+  
   ![img.png](readme/preview.png)
+  
 - Focus on the preview url that is supplied as we will use the `secret` and `slug` in our codebase api route.
 - Now come back to code terminal and run `bun add @contentful/live-preview or npm install @contentful/live-preview`
 - Once installed, create a new layout file inside `app/preview` folder. Inside it, create another folder `_components`
