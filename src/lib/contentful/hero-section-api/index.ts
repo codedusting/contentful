@@ -68,12 +68,16 @@ function extractHomeHeroSectionEntries(fetchResponse: {
   return fetchResponse?.data?.homepageCollection?.items;
 }
 
-export async function getAllHomeHeroSections(limit = 3, isDraftMode = false) {
+export async function getAllHomeHeroSections(
+  limit = 3,
+  isDraftMode = false,
+  locale: string = "en-US",
+) {
   const blogs = await fetchGraphQL(
     `query {
       homepageCollection(where:{heading_exists: true},limit: ${limit}, preview: ${
         isDraftMode ? "true" : "false"
-      }) {
+      }, locale: "${locale}") {
           items {
             ${HOME_HERO_SECTION_GRAPHQL_FIELDS}
           }
@@ -86,13 +90,16 @@ export async function getAllHomeHeroSections(limit = 3, isDraftMode = false) {
   return extractHomeHeroSectionEntries(blogs);
 }
 
-export async function getHomeHeroSection(slug: string, isDraftMode = false) {
-  // console.log({ isDraftMode });
+export async function getHomeHeroSection(
+  slug: string,
+  isDraftMode = false,
+  locale: string = "en-US",
+) {
   const preview = await fetchGraphQL(
     `query {
       homepageCollection(where:{previewSlug: "${slug}"}, limit: 1, preview: ${
         isDraftMode ? "true" : "false"
-      }) {
+      }, locale: "${locale}") {
           items {
             ${HOME_HERO_SECTION_GRAPHQL_FIELDS}
           }

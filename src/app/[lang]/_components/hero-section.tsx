@@ -2,7 +2,7 @@ import { HomeHeroSectionProps } from "@/lib/contentful/hero-section-api";
 import { cn } from "@/lib/utils";
 // import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
-import HeroForm from "@/app/_components/hero-form";
+import HeroForm from "./hero-form";
 // import { BLOCKS } from "@contentful/rich-text-types";
 // import Link from "next/link";
 
@@ -64,7 +64,7 @@ export default function HeroSection({
         quality={100}
         priority={true}
         className={cn(
-          "rounded-2xl object-contain lg:col-span-1",
+          "rounded-2xl object-contain lg:col-span-1 lg:p-10 xl:p-20",
           {
             "order-1": layout === "Left Image and Right Text",
           },

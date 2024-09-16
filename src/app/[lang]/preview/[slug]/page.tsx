@@ -4,7 +4,7 @@ import {
   HomeHeroSectionProps,
 } from "@/lib/contentful/hero-section-api";
 import { notFound } from "next/navigation";
-import PreviewWrapper from "@/app/preview/_components/preview-wrapper";
+import PreviewWrapper from "../_components/preview-wrapper";
 
 export async function generateStaticParams() {
   const allPreviews = await getAllHomeHeroSections();
@@ -17,16 +17,21 @@ export async function generateStaticParams() {
 export default async function PreviewPage({
   params,
 }: {
-  params: { slug: string };
+  params: { lang: string; slug: string };
 }) {
-  const homeHeroSection = await getHomeHeroSection(params.slug, true);
+  console.log({ params });
+  const homeHeroSection = await getHomeHeroSection(
+    params.slug,
+    true,
+    params.lang,
+  );
 
   if (!homeHeroSection) {
     notFound();
   }
 
   return (
-    <section className="bg-primary text-primary-foreground grid place-items-center">
+    <section className="grid place-items-center bg-primary text-primary-foreground">
       <PreviewWrapper data={homeHeroSection} />
     </section>
   );
