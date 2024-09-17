@@ -52,10 +52,11 @@ in the FE.
 - You can create a dummy content model named "Homepage" and fill it with following types as shown in the image below (
   note: also add a new "Preview Slug" field with Slug type linked to Internal Title):
   
-  ![image](https://github.com/user-attachments/assets/a2697c06-abff-4297-a262-a13c2434ce42)
-
+  ![image](https://github.com/user-attachments/assets/75e4537d-0e6f-493e-81ad-d1e65eed2496)
   
 - Now go to "content" tab and click on "Add Entry" and simply fill the details as required. You can fill any data.
+  ![image](https://github.com/user-attachments/assets/0e500d1d-1ce9-439a-8e35-14788c84235f)
+
 - At this point, we are ready to consume this data in our codebase and also setup "Live Preview" if we want to.
 - Open you next.js app and run `bun add contentful` or `npm install contentful` to install the `contentful` package.
 - Create an `.env` file and paste the following values in it:
@@ -82,7 +83,7 @@ in the FE.
 - Start setup process and configure it like this for the localhost (note: change preview url
   to http://localhost:3000/api/preview/enable-draft?secret=preview&slug={entry.fields.previewSlug}):
 
-  ![image](https://github.com/user-attachments/assets/7bb14bb2-b786-4a3b-9c89-54d8dbf30cee)
+  ![image](https://github.com/user-attachments/assets/bfedd534-9de4-4fad-a80c-1fcf02119258)
   
 - Focus on the preview url that is supplied as we will use the `secret` and `slug` in our codebase api route.
 - Now come back to code terminal and run `bun add @contentful/live-preview or npm install @contentful/live-preview`
